@@ -1,8 +1,10 @@
 #!/usr/bin/python3
+"""Converts Roman numeral to integer."""
+
 
 def roman_to_int(roman_string):
-    """Converts Roman numeral to integer."""
-    if not isinstance(roman_string, str) or roman_string is None:
+    """Convert Roman numeral to integer."""
+    if roman_string is None or not isinstance(roman_string, str):
         return 0
 
     values = {
