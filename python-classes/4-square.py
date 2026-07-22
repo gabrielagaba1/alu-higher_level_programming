@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 """Module that defines a Square class with a size property."""
-
-
 class Square:
     """Represent a square.
 
@@ -19,7 +17,7 @@ class Square:
 
         Raises:
             TypeError: If size is not an integer.
-            ValueError: If size is less than 0.
+ValueError: If size is less than 0.
         """
         self.size = size
 
@@ -37,13 +35,13 @@ class Square:
 
         Raises:
             TypeError: If value is not an integer.
-            ValueError: If value is less than 0.
+ValueError: If value is less than 0.
         """
         if type(value) is not int:
             raise TypeError("size must be an integer")
         if value < 0:
-            raise ValueError("size must be >=
-self.__size = value
+            raise ValueError("size must be >= 0")
+        self.__size = value
 
     def area(self):
         """Return the current area of the square."""
