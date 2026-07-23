@@ -3,4 +3,9 @@
 
 
 class Rectangle:
-    """Represent a rectangle."""
+    """Represent a rectangle.
+
+    This class is currently empty and only serves as a placeholder
+    for a rectangle shape, with no attributes or methods defined
+    yet.
+    """

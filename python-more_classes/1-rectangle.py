@@ -5,9 +5,10 @@
 class Rectangle:
     """Represent a rectangle.
 
-    This class defines a rectangle by its width and height, both
-    stored as private instance attributes accessed through property
-    getters/setters.
+    This class defines a rectangle by its width and height, which
+    are stored as private instance attributes. Access to both is
+    controlled through property getters and setters that validate
+    the type and value of the assigned data.
     """
 
     def __init__(self, width=0, height=0):
@@ -16,13 +17,9 @@ class Rectangle:
         Args:
             width: The width of the rectangle. Defaults to 0.
             height: The height of the rectangle. Defaults to 0.
-
-        Raises:
-            TypeError: If width or height is not an integer.
-            ValueError: If width or height is less than 0.
         """
-        self.width = width
         self.height = height
+        self.width = width
 
     @property
     def width(self):
