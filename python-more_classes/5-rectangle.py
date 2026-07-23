@@ -1,16 +1,18 @@
 #!/usr/bin/python3
-"""Module that defines a Rectangle class with a __del__ method."""
+"""Module that defines a Rectangle class with a destructor."""
 
 
 class Rectangle:
     """Represent a rectangle.
 
-    This class defines a rectangle by its width and height, both
-    stored as private instance attributes accessed through property
-    getters/setters. It also provides methods to compute the area
-    and the perimeter of the rectangle, to print it using the '#'
-    character, to return an evaluable string representation, and to
-    print a message when an instance is deleted.
+    This class defines a rectangle by its width and height, which
+    are stored as private instance attributes. Access to both is
+    controlled through property getters and setters that validate
+    the type and value of the assigned data. The class also
+    provides methods to compute the area and perimeter, a string
+    representation that draws the rectangle using '#', a
+    representation that can be used to recreate a new instance,
+    and a message printed when an instance is deleted.
     """
 
     def __init__(self, width=0, height=0):
@@ -19,13 +21,9 @@ class Rectangle:
         Args:
             width: The width of the rectangle. Defaults to 0.
             height: The height of the rectangle. Defaults to 0.
-
-        Raises:
-            TypeError: If width or height is not an integer.
-            ValueError: If width or height is less than 0.
         """
-        self.width = width
         self.height = height
+        self.width = width
 
     @property
     def width(self):
@@ -78,16 +76,17 @@ class Rectangle:
     def perimeter(self):
         """Return the current perimeter of the rectangle.
 
-        If either width or height is 0, the perimeter is 0.
+        If either the width or the height is 0, the perimeter is 0.
         """
         if self.__width == 0 or self.__height == 0:
             return 0
-        return 2 * (self.__width + self.__height)
+        return (self.__width + self.__height) * 2
 
     def __str__(self):
-        """Return the rectangle printed with the '#' character.
+        """Return the rectangle drawn with the '#' character.
 
-        If either width or height is 0, an empty string is returned.
+        If either the width or the height is 0, an empty string
+        is returned instead.
         """
         if self.__width == 0 or self.__height == 0:
             return ""
