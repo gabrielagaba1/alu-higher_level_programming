@@ -1,0 +1,55 @@
+The ``1-my_list`` module
+========================
+
+Using ``MyList``
+-----------------
+
+First, import ``MyList``:
+
+    >>> MyList = __import__('1-my_list').MyList
+
+Create a new ``MyList`` instance and add some integers to it:
+
+    >>> my_list = MyList()
+    >>> my_list.append(1)
+    >>> my_list.append(4)
+    >>> my_list.append(2)
+    >>> my_list.append(3)
+    >>> my_list.append(5)
+    >>> print(my_list)
+    [1, 4, 2, 3, 5]
+
+Printing it sorted does not change the original order:
+
+    >>> my_list.print_sorted()
+    [1, 2, 3, 4, 5]
+    >>> print(my_list)
+    [1, 4, 2, 3, 5]
+
+``MyList`` is a real ``list``:
+
+    >>> isinstance(my_list, list)
+    True
+
+An empty ``MyList`` prints sorted as an empty list:
+
+    >>> empty_list = MyList()
+    >>> empty_list.print_sorted()
+    []
+
+A ``MyList`` with a single element:
+
+    >>> single = MyList()
+    >>> single.append(42)
+    >>> single.print_sorted()
+    [42]
+
+A ``MyList`` with duplicate and negative values:
+
+    >>> mixed = MyList()
+    >>> mixed.append(-3)
+    >>> mixed.append(0)
+    >>> mixed.append(-3)
+    >>> mixed.append(7)
+    >>> mixed.print_sorted()
+    [-3, -3, 0, 7]
