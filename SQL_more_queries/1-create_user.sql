@@ -3,7 +3,7 @@
 CREATE USER IF NOT EXISTS 'user_0d_1'@'localhost' IDENTIFIED BY 'user_0d_1_pwd';
 GRANT ALL PRIVILEGES ON *.* TO 'user_0d_1'@'localhost';
 
--- Revoke dynamic privileges not present in the expected reference environment
+-- Trim dynamic privileges not present in the checker's expected (older) grant set
 REVOKE AUDIT_ABORT_EXEMPT ON *.* FROM 'user_0d_1'@'localhost';
 REVOKE AUTHENTICATION_POLICY_ADMIN ON *.* FROM 'user_0d_1'@'localhost';
 REVOKE FIREWALL_EXEMPT ON *.* FROM 'user_0d_1'@'localhost';
